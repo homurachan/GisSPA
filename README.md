@@ -27,39 +27,29 @@ temp file:
 #### Install
 
 0.  install git lfs to get the test_Data
-1.  install hdf5 1.8 (https://portal.hdfgroup.org/display/support/HDF5+1.8.21), the source is attached at ./hdf5
-2.  Fill the "LIB_HDF5" and "INCLUDE_HDF5" (row 4 & 5) in Makefile with your install path to set hdf5 available.
-3.  complie with Makefile. 
+1.  In ubuntu, sudo apt install libhdf5-dev. In Centos, sudo yum install hdf5-devel.x86_64 gcc-c++ . CUDA is a must for compiling this.
+2.  In ubuntu, cd /usr/lib/x86_64-linux-gnu && sudo ln -s libhdf5_serial.so.xx.xx.xx libhdf5.so && sudo ln -s libhdf5_serial_hl.so.xx.xx.xx libhdf5_hl.so
+
+replace xx.xx.xx to the actual extension name.
+
+3.  complie with Makefile in ubuntu, or `make -f Makefile_for_centos` in Centos.
 4.  write a config file
 5.  ./main + config_file
 
 #### Quick start  
 
--> inatll git lfs  
+-> install git lfs  
 
 1. sudo apt-get update  
 2. sudo apt-get install git-lfs  
 3. git lfs install  
 4. git lfs clone https://github.com/Autumn1998/GisSPA.git   
   
--> install hdf5     
-
-0. cd GisSPA  
-1. cd ./hdf5 
-2. tar zvxf hdf5-1.8.21.tar.gz     
-3. cd hdf5-1.8.21   
-4. ./configure --prefix="your hdf5 install path"   
-5. make   
-6. make install   
-7. export LD_LIBRARY_PATH="your hdf5 install path"/lib:$LD_LIBRARY_PATH  
-   at /etc/profile or ~/.bashrc    
-8. source /etc/profile or ~/.bashrc   
-  
 -> run GisSPA   
    
 0. cd GisSPA  
 1. vim Makfile, set LIB_HDF5="your hdf5 install path"/lib,  set INCLUDE_HDF5="your hdf5 install path"/include  
-2. make clean  
+2. make clean  (I modified clean section so that removing ./main)
 3. make  
 	If "can not create /Output/Objects/main.o", mkdir /Output/Objects  
 4. ./main ./Data_TEST/config   
