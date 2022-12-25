@@ -1,12 +1,12 @@
 # GisSPA
 
 ##### ATTENTION PLEASE  
-The  big file Data_TEST in github is stored by LFS,  so the "git lfs" is necessary to be installed before CLONING THIS PROJECT!!!!!!!!!!!!!!!!       
+The big file Data_TEST in github is stored by LFS,  so the "git lfs" is necessary to be installed before CLONING THIS PROJECT!!!!!!!!!!!!!!!!       
   
 Time for compling: short     
 No need to install  
 In Data_TEST, process one image(720*720) with A100 need  40 seconds.   
-Template is 182*182*2295  
+Template is 182 * 182 * 2295  
 
 #### Introduction
 GPU parallel for isspa, pick particle with CC.  
@@ -18,7 +18,7 @@ CPU version from CJ, BeiJing
 ./main.cu: main function   
 ./GPU_func.cu(h): function processed on GPU  
 ./Makefile: complier  
-./hdf5: the source package of hdf5  
+./hdf5: the source package of hdf5  // no need
 temp file:  
 ./Data_TEST: test data  
 ./Output: res for test data and obj files.  
@@ -27,8 +27,8 @@ temp file:
 #### Install
 
 0.  install git lfs to get the test_Data
-1.  In ubuntu, sudo apt install libhdf5-dev. In Centos, sudo yum install hdf5-devel.x86_64 gcc-c++ . CUDA is a must for compiling this.
-2.  In ubuntu, cd /usr/lib/x86_64-linux-gnu && sudo ln -s libhdf5_serial.so.xx.xx.xx libhdf5.so && sudo ln -s libhdf5_serial_hl.so.xx.xx.xx libhdf5_hl.so
+1.  In ubuntu, `sudo apt install libhdf5-dev`. In Centos, `sudo yum install hdf5-devel.x86_64 gcc-c++` . CUDA is a must for compiling this.
+2.  In ubuntu, `cd /usr/lib/x86_64-linux-gnu && sudo ln -s libhdf5_serial.so.xx.xx.xx libhdf5.so && sudo ln -s libhdf5_serial_hl.so.xx.xx.xx libhdf5_hl.so`
 
 replace xx.xx.xx to the actual extension name.
 
