@@ -1,0 +1,13 @@
+# Ubuntu
+# sudo apt-get install libhdf5-dev build-essential
+# require CUDA
+# cd /usr/lib/x86_64-linux-gnu
+# sudo ln -s libhdf5_serial.so.xx.xx.xx libhdf5.so
+# sudo ln -s libhdf5_serial_hl.so.xx.xx.xx libhdf5_hl.so
+
+# Centos
+# sudo yum install hdf5-devel.x86_64 gcc-c++
+# require CUDA
+# make -f Makefile_for_centos
+
+
